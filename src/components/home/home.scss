@@ -1,0 +1,85 @@
+.home {
+  height: calc(100vh - 10.5rem);
+  width: 100%;
+  padding: 3rem 0 0 4rem;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
+  .homewrapper {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    justify-content: space-around;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .leftcontent,
+  .leftcontenttop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    .leftcontentbottom {
+      display: flex;
+      align-self: flex-start;
+      align-items: center;
+      gap: 1.2rem;
+
+      .downloadbtn {
+        padding: 1.5rem 3rem;
+        border: 0.1rem solid #5c59f3;
+        outline: none;
+        color: #5c59f3;
+        background-color: transparent;
+        border-radius: 0.4rem;
+        cursor: pointer;
+        font-weight: 500;
+
+        &:hover {
+          background-color: #5c59f3;
+          color: #ffffff;
+        }
+      }
+    }
+
+    .devintro {
+      font-weight: 700;
+      font-size: 4rem;
+      line-height: 4.8rem;
+      color: var(--color-title);
+
+      .devname {
+        color: #5c59f3;
+      }
+    }
+    .devrole {
+      align-self: flex-start;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: #464754;
+    }
+  }
+
+  .rightcontent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid blue;
+
+    .devimg {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+}

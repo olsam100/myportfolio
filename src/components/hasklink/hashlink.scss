@@ -1,0 +1,11 @@
+.section-container {
+  margin-top: 10.5rem;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  height: calc(100vh - 10.5rem);
+  padding: 2rem 1rem;
+}

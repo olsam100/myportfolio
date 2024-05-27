@@ -1,0 +1,28 @@
+.about {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 4rem;
+  height: calc(100vh - 10.5rem);
+  //   margin-top: 10.5rem;
+  color: var(--color-title);
+
+  .aboutwrapper {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 3rem;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 2rem;
+      line-height: 3.2rem;
+    }
+  }
+}
