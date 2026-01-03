@@ -1,15 +1,15 @@
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useTheme } from '../../context/theme'
-import { getBlogPostById } from '../../data/blog-data'
+import { getBlogPostBySlug } from '../../data/blog-data'
 
 const Post = () => {
   const { theme, toggleTheme } = useTheme()
-  const { id } = useParams()
+  const { slug } = useParams()
   const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const post = getBlogPostById(id)
+  const post = getBlogPostBySlug(slug)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +29,7 @@ const Post = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [id])
+  }, [slug])
 
   if (!post) {
     return (

@@ -12,7 +12,7 @@ const headerItems = [
   {
     id: 2,
     name: 'posts',
-    link: '/posts',
+    link: '/blog',
   },
   {
     id: 3,
@@ -109,11 +109,20 @@ const Blog = () => {
 
           <div className='blog_posts'>
             {blogPosts.map((post) => {
-              const { id, title, image, excerpt, author, date, category } = post
+              const {
+                id,
+                slug,
+                title,
+                image,
+                excerpt,
+                author,
+                date,
+                category,
+              } = post
 
               return (
                 <article key={id} className='blog_post_card'>
-                  <Link to={`/posts/${id}`} className='blog_post_link'>
+                  <Link to={`/blog/${slug}`} className='blog_post_link'>
                     <div className='blog_post_image_wrapper'>
                       <img
                         src={image}
@@ -123,7 +132,7 @@ const Blog = () => {
                     </div>
                   </Link>
                   <div className='blog_post_content'>
-                    <Link to={`/posts/${id}`} className='blog_post_title_link'>
+                    <Link to={`/blog/${slug}`} className='blog_post_title_link'>
                       <h2 className='blog_post_title'>{title}</h2>
                     </Link>
                     <div className='blog_post_meta'>
@@ -132,7 +141,7 @@ const Blog = () => {
                       <span className='blog_post_date'>{date}</span>
                     </div>
                     <p className='blog_post_excerpt'>{excerpt}</p>
-                    <Link to={`/posts/${id}`} className='blog_post_read_more'>
+                    <Link to={`/blog/${slug}`} className='blog_post_read_more'>
                       Continue reading
                     </Link>
                   </div>

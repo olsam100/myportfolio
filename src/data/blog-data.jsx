@@ -1,6 +1,7 @@
 export const blogPosts = [
   {
     id: 1,
+    slug: 'business-partners-work-at-modern-office',
     title: 'Business Partners Work at Modern Office',
     image:
       'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
@@ -30,6 +31,7 @@ export const blogPosts = [
   },
   {
     id: 2,
+    slug: 'water-engineering-solutions-for-communities',
     title: 'Water Engineering Solutions for Communities',
     image:
       'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
@@ -57,6 +59,7 @@ export const blogPosts = [
   },
   {
     id: 3,
+    slug: 'innovative-concrete-solutions-with-recycled-materials',
     title: 'Innovative Concrete Solutions with Recycled Materials',
     image:
       'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
@@ -87,6 +90,13 @@ export const blogPosts = [
   },
 ]
 
-export const getBlogPostById = (id) => {
-  return blogPosts.find((post) => post.id === parseInt(id))
+export const getBlogPostBySlug = (slug) => {
+  return blogPosts.find((post) => post.slug === slug)
+}
+
+export const createSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
 }
