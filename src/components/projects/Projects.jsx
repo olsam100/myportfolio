@@ -25,6 +25,20 @@ const allProjects = [
     livelink: '/#',
     image: '',
   },
+  {
+    id: 4,
+    name: 'Explainable AI (XAI) for Environmental Contamination',
+    githublink: '/#',
+    livelink: '/#',
+    image: '',
+  },
+  {
+    id: 5,
+    name: 'Explainable AI (XAI) for Environmental Contamination',
+    githublink: '/#',
+    livelink: '/#',
+    image: '',
+  },
 ]
 
 const Projects = () => {

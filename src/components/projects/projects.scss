@@ -4,30 +4,63 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
-  // padding: 3rem 4rem;
-  // height: calc(100vh - 10.5rem);
   color: var(--color-title);
 
   .projectswrapper {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    // gap: 8px;
+    gap: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2rem 0;
+    scroll-behavior: smooth;
+
+    /* Prevent wrapping */
+    flex-wrap: nowrap;
+
+    /* Custom scrollbar styling */
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--color-quaternary);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #e0a80d;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #c89609;
+    }
+
+    /* Firefox scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #e0a80d var(--color-quaternary);
 
     @media (max-width: 768px) {
       width: 100%;
-      display: flex;
-      flex-direction: column;
+      gap: 1.5rem;
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+    }
+
+    /* Ensure cards don't shrink */
+    > * {
+      flex-shrink: 0;
     }
 
     .projectimg {
       border-radius: 1.5rem;
-      width: 25rem;
-      height: 36rem;
-      object-fit: fill;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .cardinfo {
@@ -59,6 +92,9 @@
         border-radius: 0.4rem;
         cursor: pointer;
         font-weight: 500;
+        white-space: nowrap;
+        text-decoration: none;
+        display: inline-block;
 
         &:hover {
           background-color: #5c59f3;
