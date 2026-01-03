@@ -1,72 +1,44 @@
 import React from 'react'
-import {
-  html,
-  css,
-  javascript,
-  reactjs,
-  nodejs,
-  mongodb,
-  nextjs,
-} from 'assets/index'
+
 import './skills.scss'
 
 const Skills = () => {
   const items = [
     {
       id: 1,
-      skill: 'HTML5',
-      icon: html,
+      skill: 'Water Systems Design',
     },
     {
       id: 2,
-      skill: 'CSS',
-      icon: css,
+      skill: 'Fluid Mechanics',
     },
     {
       id: 3,
-      skill: 'JavaScript',
-      icon: javascript,
+      skill: 'Hydrology & Hydraulics',
     },
     {
       id: 4,
-      skill: 'ReactJS',
-      icon: reactjs,
+      skill: 'Proficiency in Python & JavaScript',
     },
     {
       id: 5,
-      skill: 'NodeJS',
-      icon: nodejs,
+      skill: 'Attention to Detail & Precision',
     },
     {
       id: 6,
-      skill: 'MongoDB',
-      icon: mongodb,
-    },
-    {
-      id: 7,
-      skill: 'NextJs',
-      icon: nextjs,
+      skill: 'Communication',
     },
   ]
 
   return (
-    <div className='skills'>
-      <div className='skillstitlewrapper'>
-        <h1>Skills</h1>
-        {/* <h1>Tech stacks</h1> */}
-      </div>
-      <div className='logos'>
-        <div className='logos-slide'>
-          {items.map(({ id, skill, icon }) => (
-            <div key={id} className='menu-item'>
-              <div className='imgwrapper'>
-                <img src={icon} alt={skill} />
-                <p>{skill}</p>
-              </div>
-            </div>
-          ))}
+    <div className='skills_box'>
+      {items.map(({ id, skill }) => (
+        <div key={id} className=''>
+          <div className=''>
+            <p>{skill}</p>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   )
 }

@@ -6,21 +6,21 @@ import './projects.scss'
 const allProjects = [
   {
     id: 1,
-    name: 'Analytics Dashboard',
+    name: 'AI-Driven Water Quality Index (WQI) Classifier',
     githublink: 'https://github.com/olsam100/analytics-dashboard',
     livelink: 'https://analytics-dashboard-app.netlify.app',
     image: analytics,
   },
   {
     id: 2,
-    name: 'e-commerce',
+    name: 'Hydrological Time-Series Forecaster (Flood/Rainfall)',
     githublink: '/#',
     livelink: '/#',
     image: '',
   },
   {
     id: 3,
-    name: 'Church website',
+    name: 'Explainable AI (XAI) for Environmental Contamination',
     githublink: '/#',
     livelink: '/#',
     image: '',

@@ -1,9 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
-import './index.css'
-import { Header, HashLink, Footer } from './components'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
-const App = () => {
+const ThemeContext = createContext()
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext)
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider')
+  }
+  return context
+}
+
+export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light')
 
   useEffect(() => {
@@ -28,17 +35,16 @@ const App = () => {
       : document.documentElement.setAttribute('data-theme', 'light')
   }, [theme])
 
-  return (
-    <div className='app'>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path='/' element={<HashLink />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
-  )
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'))
+  }
+
+  const value = {
+    theme,
+    toggleTheme,
+  }
+
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
-export default App
+export default ThemeContext
