@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Portfolio from 'pages/main'
 import Blog from 'pages/blog'
