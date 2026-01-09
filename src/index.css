@@ -549,6 +549,9 @@ a {
     width: 2rem;
     height: 2rem;
   }
+  .education_item_container_right > p {
+    text-align: left;
+  }
 }
 
 .blog {
