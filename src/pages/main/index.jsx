@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import iamolumide from '../../assets/images/olumide.png'
-import { Projects, Skills } from 'components'
+import { Projects } from 'components'
 import { useTheme } from '../../context/theme'
 import DarkIcon from 'assets/darkIcon'
 import LightIcon from 'assets/lightIcon'
