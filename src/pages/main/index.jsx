@@ -225,18 +225,21 @@ const Portfolio = () => {
               </div>
             </div>
             <div className='portfolio_right profile_content'>
-              {technicalSkills.map((item, index) => (
-                <div key={index} className='skill_group'>
-                  <h3 className='skill_category_title'>{item.category}</h3>
-                  <div className='skill_list'>
-                    {item.skills.map((skill, skillIndex) => (
-                      <span key={skillIndex} className='skill_item'>
-                        {skill}
-                      </span>
-                    ))}
+              <div className='skill_wrapper'>
+                {technicalSkills.map((item, index) => (
+                  <div key={index} className='skill_wrapperinner'>
+                    <h3 className='skill_category_title'>{item.category}</h3>
+                    <div className='skill_list'>
+                      {item.skills.map((skill, skillIndex) => (
+                        <span key={skillIndex} className='skill_item'>
+                          {skill}
+                          {skillIndex < item.skills.length - 1 && ', '}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 

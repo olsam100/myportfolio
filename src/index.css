@@ -1056,7 +1056,13 @@ a {
   gap: 20px;
 }
 
-.skill_group {
+.skill_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill_wrapperinner {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1067,14 +1073,6 @@ a {
   flex-wrap: wrap;
   gap: 10px;
 }
-
-/* .interest_lists {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  flex-wrap: wrap;
-  gap: 10px;
-} */
 
 .interest_lists {
   list-style: none;
