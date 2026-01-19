@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import iamolumide from '../../assets/images/olumide.png'
 import { Projects, Skills } from 'components'
 import { useTheme } from '../../context/theme'
+import DarkIcon from 'assets/darkIcon'
+import LightIcon from 'assets/lightIcon'
 
 const contactDetails = [
   {
@@ -18,12 +20,68 @@ const contactDetails = [
   {
     id: 3,
     name: 'web',
-    value: 'http://www.olumideoladunjoye.me',
+    value: 'http://www.samoladunjoye.com',
   },
   {
     id: 4,
     name: 'email',
-    value: 'olumideoladunjoye@me',
+    value: 'olumide@samoladunjoye.com',
+  },
+]
+
+const researchInterest = [
+  {
+    name: 'Water and wastewater treatment process optimization',
+  },
+  {
+    name: 'Environmental and hydrological modelling',
+  },
+  {
+    name: 'Decision-support systems for water resources',
+  },
+  {
+    name: 'Pollution control and waste management',
+  },
+  {
+    name: 'Membrane and biological treatment processes',
+  },
+  {
+    name: 'Digital twins and soft-sensor development',
+  },
+  {
+    name: 'Explainable AI for environmental systems',
+  },
+  {
+    name: 'Climate-resilient water infrastructure',
+  },
+]
+
+const technicalSkills = [
+  {
+    category: 'Environmental & Modelling',
+    skills: [
+      'Water & wastewater treatment',
+      'Hydrology',
+      'Pollution control',
+      'Biosolids management',
+    ],
+  },
+  {
+    category: 'Computational & Data',
+    skills: [
+      'Python',
+      'Pandas',
+      'NumPy',
+      'Scikit-learn',
+      'TensorFlow/Keras',
+      'XGBoost',
+      'SHAP',
+      'LIME',
+    ],
+  },
+  {
+    category: 'Software & Visualization',
+    skills: ['Streamlit', 'FastAPI', 'React', 'JavaScript', 'Plotly', 'Docker'],
   },
 ]
 
@@ -47,37 +105,7 @@ const Portfolio = () => {
               onClick={toggleTheme}
               aria-label='Toggle theme'
             >
-              {theme === 'dark' ? (
-                <svg
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                >
-                  <circle cx='12' cy='12' r='5' />
-                  <line x1='12' y1='1' x2='12' y2='3' />
-                  <line x1='12' y1='21' x2='12' y2='23' />
-                  <line x1='4.22' y1='4.22' x2='5.64' y2='5.64' />
-                  <line x1='18.36' y1='18.36' x2='19.78' y2='19.78' />
-                  <line x1='1' y1='12' x2='3' y2='12' />
-                  <line x1='21' y1='12' x2='23' y2='12' />
-                  <line x1='4.22' y1='19.78' x2='5.64' y2='18.36' />
-                  <line x1='18.36' y1='5.64' x2='19.78' y2='4.22' />
-                </svg>
-              ) : (
-                <svg
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                >
-                  <path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z' />
-                </svg>
-              )}
+              {theme === 'dark' ? <DarkIcon /> : <LightIcon />}
             </button>
           </nav>
         </div>
@@ -146,49 +174,84 @@ const Portfolio = () => {
               </div>
             </div>
             <div className='portfolio_right about_content'>
-              I am Olumide, a graduate of Civil Engineering with interest in the
-              availability of good and quality water for all irrespective of
-              location or enviroment.
+              Civil and Environmental Engineer with strong interests in water
+              and wastewater treatment process optimization, environmental
+              modelling, and decision-support systems. Experienced in
+              integrating engineering fundamentals with data-driven methods,
+              machine learning, and software development to support sustainable
+              and climate-resilient water infrastructure.
             </div>
           </div>
-          {/* 3rd row starts */}
+
+          {/* 3rd-profile */}
           <div className='portfolio_row'>
-            <div className='portfolio_left expertise_wrapper'>
-              <div className='expertise_wrapper_inner'>
-                <p className='about_left'>expertise</p>
-                <p className='about_left_text'>What I am all about</p>
+            <div className='portfolio_left profile_wrapper'>
+              <div className='profile_wrapper_inner'>
+                <p className='about_left'>interest</p>
+                <p className='about_left_text'>Scholarly intersts</p>
               </div>
             </div>
-            <div className='portfolio_right expertise_content'>
-              <Projects />
+            <div className='portfolio_right profile_content'>
+              <ul className='interest_lists'>
+                {researchInterest.map((interest) => (
+                  <li key={interest.name} className='interest_item'>
+                    {interest.name}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-          {/* 3rd row ends */}
 
-          {/* 4th row starts - skills */}
           <div className='portfolio_row'>
             <div className='portfolio_left skills_wrapper'>
               <div className='skills_wrapper_inner'>
-                <p className='about_left'>skills</p>
-                <p className='about_left_text'>What I am all about</p>
+                <p className='about_left'>expertise</p>
+                <p className='about_left_text'>Core Competencies</p>
               </div>
             </div>
             <div className='portfolio_right skills_content'>
-              <Skills />
+              <div className='skills_wrapper'>
+                <Projects />
+              </div>
             </div>
           </div>
+          {/* 4th row  Interest starts */}
+
+          <div className='portfolio_row'>
+            <div className='portfolio_left profile_wrapper'>
+              <div className='profile_wrapper_inner'>
+                <p className='about_left'>skills</p>
+                <p className='about_left_text'>Development Stack</p>
+              </div>
+            </div>
+            <div className='portfolio_right profile_content'>
+              {technicalSkills.map((item, index) => (
+                <div key={index} className='skill_group'>
+                  <h3 className='skill_category_title'>{item.category}</h3>
+                  <div className='skill_list'>
+                    {item.skills.map((skill, skillIndex) => (
+                      <span key={skillIndex} className='skill_item'>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* 4th row ends */}
 
           {/* 5th row - experience */}
           <div className='portfolio_row'>
-            <div className='portfolio_left experience_wrapper'>
-              <div className='experience_wrapper_inner'>
+            <div className='portfolio_left skills_wrapper'>
+              <div className='skills_wrapper_inner'>
                 <p className='about_left'>experience</p>
-                <p className='about_left_text'>Yes, I have been around</p>
+                <p className='about_left_text'>Where I've worked</p>
               </div>
             </div>
-            <div className='portfolio_right experience_content'>
-              <div className='education_content_wrapper'>
+            <div className='portfolio_right skills_content'>
+              <div className='skills_wrapper'>
                 {/* 1st experience */}
                 <div className='education_container'>
                   <div className='vertical_border_wrapper'>
@@ -198,17 +261,23 @@ const Portfolio = () => {
                   <div className='education_item_container'>
                     <div className='education_item_container_left'>
                       <p>2024 - Present</p>
-                      <p>VAM properties Ltd</p>
-                      <p>Consulting Engineer</p>
-                      <p>Lagos & Ogun</p>
+                      <p>Yayn Creatives</p>
+                      <p>Project Engineer</p>
+                      <p>Nigeria</p>
                     </div>
                     <div className='education_item_container_right'>
-                      <p>
-                        Determination of the hydraulic properties and the
-                        compressive strength of concrete with partially replaced
-                        coarse aggregate with plastic waste and palm kernel
-                        shell
-                      </p>
+                      <ul>
+                        <li>
+                          Design and implementation of water purification
+                          systems
+                        </li>
+                        <li>Design sewer networks anad observaion stations </li>
+                        <li>
+                          Ensure potable water meets health and safety
+                          standaards
+                        </li>
+                        <li>Supervise technicians and operators</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -221,32 +290,89 @@ const Portfolio = () => {
                   <div className='education_item_container'>
                     <div className='education_item_container_left'>
                       <p>2019 - 2023</p>
-                      <p>Yayn Creatives</p>
+                      <p>Designated Fortune Designs & Constructions Limited</p>
                       <p>Project Engineer</p>
+                      <p>Ogun</p>
+                    </div>
+                    <div className='education_item_container_right'>
+                      <ul>
+                        <li>
+                          Consulting engineer for water profiling and treatment
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                {/* 3rd experience */}
+                <div className='education_container'>
+                  <div className='vertical_border_wrapper'>
+                    <span className='yellow_circle'></span>
+                    <span className='vertical_border'></span>
+                  </div>
+                  <div className='education_item_container'>
+                    <div className='education_item_container_left'>
+                      <p>2017 - 2019</p>
+                      <p>VLC Limited, Lagos</p>
+                      <p>Site Engineer</p>
                       <p>Lagos</p>
                     </div>
                     <div className='education_item_container_right'>
-                      <p>
-                        Determination of the hydraulic properties and the
-                        compressive strength of concrete with partially replaced
-                        coarse aggregate with plastic waste and palm kernel
-                        shell
-                      </p>
+                      <ul>
+                        <li>Construction of greenery area for relaxation</li>
+                        <li>
+                          Design and construction of 6m x 4m xm septic tank
+                        </li>
+                        <li>
+                          Interior and Exterior finishing for 5 units of fully
+                          detached apartments
+                        </li>
+                      </ul>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                {/* 4th experience */}
+                <div className='education_container'>
+                  <div className='vertical_border_wrapper'>
+                    <span className='yellow_circle'></span>
+                    <span className='vertical_border'></span>
+                  </div>
+                  <div className='education_item_container'>
+                    <div className='education_item_container_left'>
+                      <p>2016</p>
+                      <p>Enugu State Ministry of Works </p>
+                      <p>Laboratory Assistant</p>
+                      <p>Lagos</p>
+                    </div>
+                    <div className='education_item_container_right'>
+                      <ul>
+                        <li>
+                          Collection of soil samples across the states for the
+                          purpose of road construction.
+                        </li>
+                        <li>
+                          Assited in carrying out various tests on soil samples
+                          including Atterberg, Liquid and plastic limits,
+                        </li>
+                        <li>Soil tests results analysis</li>
+                      </ul>
+                      <p></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           {/* 6th - education */}
           <div className='portfolio_row'>
-            <div className='portfolio_left education_wrapper'>
-              <div className='education_wrapper_inner'>
+            <div className='portfolio_left profile_wrapper'>
+              <div className='profile_wrapper_inner'>
                 <p className='about_left'>education</p>
-                <p className='about_left_text'>Yes, I have been around</p>
+                <p className='about_left_text'>My Acaademic Journey</p>
               </div>
             </div>
-            <div className='portfolio_right education_content'>
+            <div className='portfolio_right profile_content'>
               <div className='education_content_wrapper'>
                 {/* 1st school */}
                 <div className='education_container'>
@@ -287,12 +413,7 @@ const Portfolio = () => {
                       <p>Enugu Center</p>
                     </div>
                     <div className='education_item_container_right'>
-                      <p>
-                        Determination of the hydraulic properties and the
-                        compressive strength of concrete with partially replaced
-                        coarse aggregate with plastic waste and palm kernel
-                        shell
-                      </p>
+                      <p></p>
                     </div>
                   </div>
                 </div>
@@ -307,13 +428,34 @@ const Portfolio = () => {
                       <p>2015</p>
                       <p>Obafemi Awolowo University</p>
                       <p>Bachelor of Science in Civil Engineering</p>
-                      <p>Ile-Ife, Osun State</p>
+                      <p>Ile-Ife, Nigeria</p>
                     </div>
                     <div className='education_item_container_right'>
                       <p>
-                        Traffic Violation Study at Road 2-Road 4 Intersection,
+                        Traffic Violation Study at Road 2 – Road 4 Intersection
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 4th school */}
+                <div className='education_container'>
+                  <div className='vertical_border_wrapper'>
+                    <span className='yellow_circle'></span>
+                    <span className='vertical_border'></span>
+                  </div>
+                  <div className='education_item_container'>
+                    <div className='education_item_container_left'>
+                      <p>2008</p>
+                      <p>Moshood Abiola Polytehnic</p>
+                      <p>National Diploma in Civil Engineering</p>
+                      <p>Ogun State, Nigeria</p>
+                    </div>
+                    <div className='education_item_container_right'>
+                      <p>
+                        {/* Traffic Violation Study at Road 2-Road 4 Intersection,
                         Obafemi Awolowo University, Ile-Ife, Osun State,
-                        Nigeria.
+                        Nigeria. */}
                       </p>
                     </div>
                   </div>
@@ -321,27 +463,13 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-          {/* 7th-profile */}
-          <div className='portfolio_row'>
-            <div className='portfolio_left profile_wrapper'>
-              <div className='profile_wrapper_inner'>
-                <p className='about_left'>profile</p>
-                <p className='about_left_text'>Yes, I have been around</p>
-              </div>
-            </div>
-            <div className='portfolio_right profile_content'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui est
-              tempore commodi sit velit quae sapiente nostrum alias, corrupti
-              culpa accusantium saepe adipisci! Quod, animi dolores. Nesciunt
-              reprehenderit autem consectetur.
-            </div>
-          </div>
+
           {/* 8th-awards */}
           <div className='portfolio_row'>
             <div className='portfolio_left awards_wrapper'>
               <div className='awards_wrapper_inner'>
                 <p className='about_left'>awards</p>
-                <p className='about_left_text'>Yes, I have been around</p>
+                <p className='about_left_text'>Recognitions and Honours</p>
               </div>
             </div>
             <div className='portfolio_right awards_content'>
@@ -369,21 +497,6 @@ const Portfolio = () => {
                 </p>
                 <p className='award_year'>2008</p>
               </span>
-            </div>
-          </div>
-          {/* 9th-portfolio */}
-          <div className='portfolio_row'>
-            <div className='portfolio_left portfolio_wrapper'>
-              <div className='portfolio_wrapper_inner'>
-                <p className='about_left'>portfolio</p>
-                <p className='about_left_text'>Yes, I have been around</p>
-              </div>
-            </div>
-            <div className='portfolio_right portfolio_content'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui est
-              tempore commodi sit velit quae sapiente nostrum alias, corrupti
-              culpa accusantium saepe adipisci! Quod, animi dolores. Nesciunt
-              reprehenderit autem consectetur.
             </div>
           </div>
         </div>
