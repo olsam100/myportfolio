@@ -188,7 +188,7 @@ const Portfolio = () => {
             <div className='portfolio_left profile_wrapper'>
               <div className='profile_wrapper_inner'>
                 <p className='about_left'>interest</p>
-                <p className='about_left_text'>Scholarly intersts</p>
+                <p className='about_left_text'>Scholarly interests</p>
               </div>
             </div>
             <div className='portfolio_right profile_content'>
