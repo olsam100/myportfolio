@@ -1097,7 +1097,7 @@ a {
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: #3b82f6;
+  background: var(--text-secondary);
   color: white;
   border-radius: 50%;
   margin-right: 15px;
