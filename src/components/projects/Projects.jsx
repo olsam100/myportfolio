@@ -47,16 +47,6 @@ const Projects = () => {
             <div className='cardinfo'>
               <Card.Title>{rest.name}</Card.Title>
               <div className='card_links'>
-                <Card.GithubLink>
-                  <a
-                    href={rest.githublink}
-                    className='downloadbtn'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    Github
-                  </a>
-                </Card.GithubLink>
                 <Card.LiveLink>
                   <a
                     href={rest.livelink}
